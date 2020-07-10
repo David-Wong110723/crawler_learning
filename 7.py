@@ -37,18 +37,18 @@ def nop():
     pass
 # pass语句什么都不做，那有什么用？实际上pass可以用来作为占位符，比如现在还没想好怎么写函数的代码，就可以先放一个pass，让代码能运行起来。
 age = input('猜一猜闻闻的年龄（1-30之间）')
-if age >= 18:
+if int(age) >= 18:
     pass
 
 # 数据类型检查可以用内置函数isinstance()实现
-def my_abs(x):
+def my_abs2(x):
     if not isinstance(x, (int, float)):
         raise TypeError('bad operand type')
     if x >= 0:
         return x
     else:
         return -x
-# print(my_abs('abc'))
+# print(my_abs2('abc'))
 
 # 练习
 print(math.sqrt(2))  # 1.41421356237
@@ -75,7 +75,7 @@ print(add_end()) # ['END', 'END'] 每次调用该函数，如果改变了L的内
 
 # 修改为
 L = [1,2,3]
-def add_end(L=None):
+def add_end2(L=None):
     if L is None:
         L = []
     L.append('END')
@@ -90,6 +90,6 @@ def person(name, age, **kw):
 print(person('Jack', 24, city='Beijing', addr='Chaoyang', zipcode=123456))
 
 # 命名关键字参数
-def person(name, age, *args):
+def person2(name, age, *args):
     print(name, age, args)
-person('Jack', 24, *(1,2,3))
+person2('Jack', 24, *(1,2,3))
